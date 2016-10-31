@@ -1,0 +1,136 @@
+.slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slider__item {
+  position: relative;
+  outline: 0;
+}
+
+/* slider on main page */
+.slider-promo {
+  height: 100%;
+}
+
+.slider__menu {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  bottom: 15%;
+  left: 150px;
+  margin: 0;
+  padding: 0;
+}
+
+.slider__slide {
+  position: relative;
+  color: $color-gold;
+  height: 60px;
+  min-width: 220px;
+  margin-right: 100px;
+  padding: 30px 70px 15px;
+  border-bottom: 1px solid $color-gold;
+  transition: all .01s;
+  text-decoration: none;
+
+  &:hover {
+    color: #fff;
+    border-color: #fff;
+  }
+
+  &:hover:before {
+    -webkit-filter: brightness(0) invert(1);
+  }
+
+  &:before {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &.slide_appartments {
+
+    &:before {
+      content: url('../img/icons/icon-apartment.png');
+    }
+  }
+
+  &.slide_parking {
+
+    &:before {
+      content: url('../img/icons/icon-parking.png');
+    }
+  }
+
+  &.slide_safety {
+
+    &:before {
+      content: url('../img/icons/icon-safety.png');
+    }
+  }
+
+  &.slide_architecture {
+
+    &:before {
+      content: url('../img/icons/icon-architecture.png');
+    }
+  }
+
+  &.slide_interior {
+
+    &:before {
+      content: url('../img/icons/icon-interior.png');
+    }
+  }
+
+  &.slide_materials {
+
+    &:before {
+      content: url('../img/icons/icon-materials.png');
+    }
+  }
+}
+
+.slider__slide.active {
+  color: #fff;
+  border-color: #fff;
+  cursor: default;
+
+  &:before {
+    -webkit-filter: brightness(0) invert(1);
+  }
+}
+
+@media (max-height: 900px) {
+
+  .slider__menu {
+    bottom: 10%;
+  }
+}
+
+
+@media (max-width: 640px) {
+
+  .slider__menu {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 5%;
+  }
+
+  .slider__slide {
+    height: 60px;
+    min-width: 60px;
+    width: 60px;
+    margin-right: 50px;
+    overflow: hidden;
+    border: none;
+    padding: 0;
+    padding-left: 60px;
+  }
+}
